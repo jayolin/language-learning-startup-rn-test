@@ -12,7 +12,7 @@
 
 1. The Project can be cloned by running the following command:
 
-`$ git clone`
+`$ git clone https://github.com/jayolin/language-learning-startup-rn-test.git`
 
 2. After the step above has run successfully, cd into the project directory and run install all dependencies like so:
 
