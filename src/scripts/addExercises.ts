@@ -3,14 +3,47 @@ import {IExercise} from '../interfaces';
 
 const exercises: Array<IExercise> = [
   {
-    text: 'The house is small',
-    translation: 'Das Haus ist klein',
+    text: 'My brother and sister are here',
+    translation: 'Meinem Bruder und meiner Schwester sind hier',
     match: {
-      original: 'house',
-      translation: 'haus',
+      original: 'brother',
+      translation: 'bruder',
     },
-    translatedLiterallyFrom: 'The house is small',
-    options: ['haus', 'stuff', 'other', 'stuff'],
+    translatedLiterallyFrom: 'My brother and my sister are here',
+    options: ['ohrwurm', 'kummerspeck', 'bruder', 'fernweh'],
+    lang: 'English/German',
+  },
+  {
+    text: 'Who are you',
+    translation: 'Wer bist du',
+    match: {
+      original: 'who',
+      translation: 'wer',
+    },
+    translatedLiterallyFrom: 'Who are you',
+    options: ['Innerer', 'fernweh', 'kummerspeck', 'wer'],
+    lang: 'English/German',
+  },
+  {
+    text: 'The lion is in the cage',
+    translation: 'Der Löwe ist im Käfig',
+    match: {
+      original: 'cage',
+      translation: 'Käfig',
+    },
+    translatedLiterallyFrom: 'The lion is in cage',
+    options: ['käfig', 'bitte', 'danke', 'purzelbaum'],
+    lang: 'English/German',
+  },
+  {
+    text: 'When are you back in town',
+    translation: 'Wann bist du wieder in der Stadt?',
+    match: {
+      original: 'back',
+      translation: 'wieder',
+    },
+    translatedLiterallyFrom: 'When are you back in the town',
+    options: ['hallo', 'moment', 'wieder', 'alles'],
     lang: 'English/German',
   },
 ];
@@ -60,6 +93,7 @@ const addExercises = async () => {
     console.log('Done seedding! 😇');
   } catch (error) {
     console.error(error);
+  } finally {
     process.exit();
   }
 };

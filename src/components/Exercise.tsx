@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     fontSize: 27,
     textAlign: 'center',
     fontWeight: '300',
-    marginVertical: 20,
+    // marginVertical: 20,
     color: '#FFF',
   },
   flexContainer: {
@@ -175,6 +175,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'wrap',
+    marginVertical: 20,
   },
   translationText: {
     fontSize: 20,
