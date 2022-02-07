@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import API from '../api';
 import {IAPI, IExercise} from '../interfaces';
+import theme from '../styles/theme';
 import BottomSheet from './BottomSheet';
 import Button from './Button';
 import Exercise from './Exercise';
@@ -122,7 +123,7 @@ class ExercisesContainer extends React.Component<Props> {
         {this.state.loading && (
           <View
             style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <ActivityIndicator size="large" color="#FFF" />
+            <ActivityIndicator size="large" color={theme.white} />
           </View>
         )}
         {!this.state.loading && (
@@ -156,8 +157,8 @@ class ExercisesContainer extends React.Component<Props> {
           onRequestClose={() => this.setState({showBotttomSheet: false})}
           style={{
             backgroundColor: this.state.selected.isCorrect
-              ? '#59e2e4'
-              : '#ff7a87',
+              ? theme.success
+              : theme.error,
           }}
           show={this.state.showBotttomSheet}>
           <View>
@@ -173,7 +174,9 @@ class ExercisesContainer extends React.Component<Props> {
               </Text>
             )}
             <Button
-              textColor={this.state.selected.isCorrect ? '#59e2e4' : '#ff7a87'}
+              textColor={
+                this.state.selected.isCorrect ? theme.success : theme.error
+              }
               text={this.endReached ? 'Start Over' : 'Continue'}
               onPress={this.nextSlide}
             />
@@ -187,14 +190,14 @@ const styles = StyleSheet.create({
   container: {
     height: '85%',
     width: '100%',
-    backgroundColor: '#3b6d81',
+    backgroundColor: theme.blue,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     overflow: 'hidden',
   },
   label: {
     fontWeight: '700',
-    color: '#FFF',
+    color: theme.white,
     marginBottom: 20,
     textTransform: 'capitalize',
   },

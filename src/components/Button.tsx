@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+import theme from '../styles/theme';
 
 export enum ButtonSize {
   md = 'md',
@@ -19,8 +20,8 @@ const Button: React.FC<ButtonProps> = props => {
   const {
     text,
     onPress = () => {},
-    backgroundColor = '#FFF',
-    textColor = '#3b6d81',
+    backgroundColor = theme.white,
+    textColor = theme.primary,
     size = ButtonSize.md,
     style = {},
     textStyle = {},

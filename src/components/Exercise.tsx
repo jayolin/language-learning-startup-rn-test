@@ -5,6 +5,7 @@ import {IExercise} from '../interfaces';
 import Button, {ButtonSize} from './Button';
 import RadioButtons from './RadioButtons';
 import Tooltip from 'rn-tooltip';
+import theme from '../styles/theme';
 
 const {width} = Dimensions.get('window');
 
@@ -44,7 +45,7 @@ class Exercise extends React.Component<ExerciseProps> {
           key={`word-${w}`}
           actionType="press"
           withOverlay={false}
-          backgroundColor="#FFF"
+          backgroundColor={theme.white}
           width={70}
           popover={<Text>{literalTranslationArray[i]}</Text>}>
           <Text style={style}>{w} </Text>
@@ -105,10 +106,10 @@ class Exercise extends React.Component<ExerciseProps> {
             this.state.isCorrect === null
               ? undefined
               : this.state.isCorrect === true
-              ? '#0bdfe8'
-              : '#ff7b86'
+              ? theme.success
+              : theme.error
           }
-          textColor={this.state.isCorrect === null ? undefined : '#FFF'}
+          textColor={this.state.isCorrect === null ? undefined : theme.white}
         />
       ) : (
         <View
@@ -136,8 +137,8 @@ class Exercise extends React.Component<ExerciseProps> {
         </View>
         <Button
           disabled={!this.state.selected}
-          textColor="#FFF"
-          backgroundColor="#0fe2e8"
+          textColor={theme.white}
+          backgroundColor={theme.green}
           text="Check Answer"
           onPress={this.checkAnswer}
         />
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   instruction: {
-    color: '#FFF',
+    color: theme.white,
     textAlign: 'center',
     fontWeight: '300',
   },
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '300',
     // marginVertical: 20,
-    color: '#FFF',
+    color: theme.white,
   },
   flexContainer: {
     flexDirection: 'row',
@@ -181,14 +182,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     fontWeight: '300',
-    color: '#FFF',
+    color: theme.white,
     textDecorationLine: 'underline',
     textDecorationStyle: 'dotted',
   },
   emptySpace: {
     height: 22,
     borderBottomWidth: 1,
-    borderBottomColor: '#FFF',
+    borderBottomColor: theme.white,
     width: 100,
   },
   emphasizedWord: {
@@ -196,7 +197,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    color: '#FFF',
+    color: theme.white,
   },
   radioButtons: {
     marginVertical: 40,

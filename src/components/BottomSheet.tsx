@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Modal, TouchableWithoutFeedback} from 'react-native';
+import theme from '../styles/theme';
 
 export interface Props {
   show: boolean;
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: '#FFF',
+    backgroundColor: theme.white,
     borderTopStartRadius: 20,
     borderTopEndRadius: 20,
     padding: 20,
