@@ -30,6 +30,8 @@ $ pod install
 
 4. Once you've done that, you can run `yarn android` or `yarn ios` to run it on Android and iOS respectively 
 
+> Note: sensitive information like Firebase API Key have intentionally not been abstracted to allow for seamless running of the project.
+
 ## Scripts
 
 By default, 5 exercises have been seeded into my Firestore database. If however, you would like to add more exercises to those, then there's a provision for that.
